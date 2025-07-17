@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  
+  <title>Login Page</title>
+
+  <!--css bağlantısı-->
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body class="relative bg-mobile md:bg-desktop bg-cover bg-center font-poppins min-h-screen">
+
+  <!--js bağlantısı-->
+  <script src="script.js"></script>
+
+
+    <!--background color-->
+    <div class="absolute inset-0 bg-red400 bg-opacity-50 z-0"></div>
+
+    <!--içerik-->
+    <main class="relative z-20 grid md:grid-cols-[1fr_1.2fr] items-center justify-center pt-[100px] pb-12 px-6 gap-4">
+
+    <!-- title -->
+     <div class="px-6 text-center md:text-left space-y-6 md:pl-[90px]">
+      <h1 class="text-white text-[30px] font-semibold max-w-[600px] md:max-w-[550px] font-poppins leading-tight md:text-[50px]">
+        Learn to code by watching others
+      </h1>
+    <!--text-->
+      <p class="text-white text-[16px]  md:text[18px] font-poppins  max-w-md md:max-w-[500px]">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+</div>
+
+  <!--container -->
+  <div class="flex flex-col items-center w-full max-w-md mx-auto mt-10 md:mt-0 gap-4 justify-start">
+    
+    <!-- try button -->
+    <button class="bg-button font-poppins text-[16px] text-white font-semibold py-[20px] mb-[17px] w-full px-6 rounded-lg cursor-pointer shadow-[0_4px_0px_hsl(0,37%,60%)] md:scale-[1.1]">
+      Try it free 7 days
+      <span class="block font-normal text-md">then $20/mo. thereafter</span>
+    </button>
+
+    <!-- form -->
+     <div class="bg-white rounded-lg p-6 w-full max-w-md overflow-hidden min-h-fit pb-[10px] shadow-[0_4px_0px_hsl(0,37%,60%)] md:scale-[1.1]">
+    <form class=" flex flex-col font-poppins gap-4">
+      <input type="text" placeholder="First Name" class="w-full border p-3 rounded-md placeholder:text-gray-500 
+             placeholder:font-semibold" />
+
+      <input type="text" placeholder="Last Name" class="w-full border p-3 rounded-md placeholder:text-gray-500 placeholder:font-semibold" />
+
+      <input type="text" placeholder="Email Address" class="w-full border p-3 rounded-md placeholder:text-gray-500 placeholder:font-semibold" />
+      <input type="text" placeholder="Password" class="w-full border p-3 rounded-md placeholder:text-gray-500 placeholder:font-semibold"/>
+    </form>
+    <button class="bg-claim font-poppins text-[16px] text-white font-semibold py-[15px] w-full mt-[18px] rounded-lg cursor-pointer shadow-[0_4px_0px_hsl(154,73%,43%)]">CLAIM YOUR FREE TRIAL</button>
+     <p class="text-terms-color text-[13px] mt-4 text-center leading-snug">
+      By clicking the button, you are agreeing to our <br>
+      <a href="#" class="text-red400 font-semibold justify-center text-center">Terms and Services</a>
+    </p>  
+</div>
+  </div>
+
+
+</main>
+</body>
+</html>
