@@ -1,6 +1,6 @@
   import * as yup from 'yup';
 
-  const form = document.getElementById("form");
+  const form = document.getElementById("form"); //formu js'e bağlar
 
   const inputs = {
     firstName: document.getElementById("firstName"),
@@ -17,7 +17,7 @@
 });
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    e.preventDefault(); //form submit edilince sayfanın yenilenmesini engeller validation için 
 
     
     clearAllErrors();
@@ -30,7 +30,7 @@
     };
 
     schema
-      .validate(data, { abortEarly: false })
+      .validate(data, { abortEarly: false }) //tümünü gösterir
       .then(() => {
         console.log("successful");
          form.reset();
@@ -45,8 +45,12 @@
     errors.forEach((error) => {
       const input = inputs[error.path];
       const icon = input.parentElement.querySelector("img");
-      input.classList.add("border-red-500", "text-red-500", "placeholder:text-red-300");
+      input.classList.add("border-red-500", "text-black", "placeholder:text-red-300");
       if (icon) icon.classList.remove("hidden");
+      
+      if (error.path === "email") {
+        input.placeholder = "email@example/com"; //hint for user
+      }
 
       let errorText = input.parentElement.querySelector("small");
       if (!errorText) {
@@ -65,13 +69,18 @@
     input.classList.remove("border-red-500", "text-red-500", "placeholder:text-red-300");
     if (icon) icon.classList.add("hidden");
     if (errorText) errorText.remove();
+  
+
+  if (input.id === "email") {
+    input.placeholder = "Email Address";
   }
 
+  }
   function clearAllErrors() {
     Object.values(inputs).forEach((input) => clearError(input));
   }
 
-  Object.values(inputs).forEach((input) => {
+  Object.values(inputs).forEach((input) => { //yazmaya başlayınca hatayı siler 
     input.addEventListener("input", () => {
       clearError(input);
     });
