@@ -10,10 +10,30 @@
   };
 
  const schema = yup.object().shape({
-  firstName: yup.string().required("First Name cannot be empty"),
-  lastName: yup.string().required("Last Name cannot be empty"),
-  email: yup.string().email("Looks like this is not an email").required("Email cannot be empty"),
-  password: yup.string().required("Password cannot be empty"),
+  firstName: yup
+  .string()
+  .min(2, "First Name must include at least 2 characters")
+  .required("First Name cannot be empty"),
+
+
+  lastName: yup
+  .string()
+  .min(2, "Last Name must include at least 2 characters")
+  .required("Last Name cannot be empty"),
+
+  email: yup
+  .string()
+  .matches( /^[\w.-]+@(gmail|outlook|hotmail)\.com$/,
+    "Only gmail, outlook or hotmail emails are allowed")
+  .email("Looks like this is not an email")
+  .required("Email cannot be empty"),
+
+
+  password: yup
+  .string()
+  .min(8, "Password must be at least 8 characters")
+  .matches(/[!@#$%^&*()_+={}[\]\\|:;"'<>,.?/~`]/, "Password must include at least one special character, one number and 8 characters")
+  .required("Password cannot be empty"),
 });
 
   form.addEventListener("submit", function (e) {
@@ -55,7 +75,7 @@
       let errorText = input.parentElement.querySelector("small");
       if (!errorText) {
         errorText = document.createElement("small");
-        errorText.className = 'text-red-400 text-xs italic absolute right-2 -bottom-5';
+        errorText.className = 'text-red-400 text-xs italic mt-1 block';
         input.parentElement.appendChild(errorText);
       }
       errorText.innerText = error.message;
