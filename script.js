@@ -1,4 +1,4 @@
-  import * as yup from 'yup';
+  //import * as yup from 'yup';
 
   const form = document.getElementById("form"); //formu js'e bağlar
 
@@ -9,7 +9,7 @@
     password: document.getElementById("password"),
   };
 
- const schema = yup.object().shape({
+ const schema = window.yup.object().shape({
   firstName: yup.string().required("First Name cannot be empty"),
   lastName: yup.string().required("Last Name cannot be empty"),
   email: yup.string().email("Looks like this is not an email").required("Email cannot be empty"),
