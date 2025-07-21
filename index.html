@@ -12,26 +12,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   
-  <title>Login Page</title>
+  <title>Sign up Form</title>
 
   <!--css bağlantısı-->
     <link rel="stylesheet" href="output.css" />
   </head>
   <body class="relative bg-mobile md:bg-desktop bg-cover bg-center font-poppins min-h-screen">
 
-  <!--js bağlantısı-->
-  <script src="script.js"></script>
+
 
 
     <!--background color-->
     <div class="absolute inset-0 bg-red400 bg-opacity-50 z-0"></div>
 
     <!--içerik-->
-    <main class="relative z-20 grid md:grid-cols-[1fr_1.2fr] items-center justify-center pt-[100px] pb-12 px-6 gap-4">
+    <main class="relative z-20 grid md:grid-cols-[1fr_1.3fr] items-center justify-center pt-[100px] pb-12 px-6 gap-4">
 
     <!-- title -->
-     <div class="px-6 text-center md:text-left space-y-6 md:pl-[90px]">
-      <h1 class="text-white text-[30px] font-semibold max-w-[600px] md:max-w-[550px] font-poppins leading-tight md:text-[50px]">
+     <div class="px-6 text-center md:text-left space-y-6 md:pl-[100px] md:mb-[17px]">
+      <h1 class="text-white text-[30px] font-semibold max-w-[600px] md:max-w-[900px] font-poppins leading-tight md:text-[50px]">
         Learn to code by watching others
       </h1>
     <!--text-->
@@ -42,31 +41,50 @@
   <div class="flex flex-col items-center w-full max-w-md mx-auto mt-10 md:mt-0 gap-4 justify-start">
     
     <!-- try button -->
-    <button class="bg-button font-poppins text-[16px] text-white font-semibold py-[20px] mb-[17px] w-full px-6 rounded-lg cursor-pointer shadow-[0_4px_0px_hsl(0,37%,60%)] md:scale-[1.1]">
+    <button class="bg-button font-poppins text-[16px] text-white font-semibold py-[20px] mb-[17px] w-full px-6 rounded-lg cursor-pointer shadow-[0_4px_0px_hsl(0,37%,60%)] md:scale-[1.3] md:py-[15px] md:px-[60px] md:mb-[70px] md:whitespace-nowrap md:text-sm ">
       Try it free 7 days
-      <span class="block font-normal text-md">then $20/mo. thereafter</span>
+      <span class="block md:inline font-normal text-md md:text-xs">then $20/mo. thereafter</span>
     </button>
 
     <!-- form -->
-     <div class="bg-white rounded-lg p-6 w-full max-w-md overflow-hidden min-h-fit pb-[10px] shadow-[0_4px_0px_hsl(0,37%,60%)] md:scale-[1.1]">
-    <form class=" flex flex-col font-poppins gap-4">
+     <div class="bg-white rounded-lg p-6 w-full max-w-md overflow-hidden min-h-fit pb-[10px] shadow-[0_4px_0px_hsl(0,37%,60%)] md:scale-[1.3] md:px-[34px] md:mb-[100px]">
+
+    <form class=" flex flex-col font-poppins gap-6" id="form">
+      <div class="relative">
       <input type="text" placeholder="First Name" class="w-full border p-3 rounded-md placeholder:text-gray-500 
-             placeholder:font-semibold" />
+             placeholder:font-semibold md:placeholder:text-xs md:py-[5px]" id="firstName"/>
+             <img src="./images/icon-error.svg" alt="error icon" class="absolute right-4 top-4 hidden" />
+            
+    </div>
+    <div class="relative">
+      <input type="text" placeholder="Last Name" class="w-full border p-3 rounded-md placeholder:text-gray-500 placeholder:font-semibold  md:placeholder:text-xs " id="lastName"/>
+      <img src="./images/icon-error.svg" alt="error icon" class="absolute right-4 top-4 hidden" />
+      </div>
 
-      <input type="text" placeholder="Last Name" class="w-full border p-3 rounded-md placeholder:text-gray-500 placeholder:font-semibold" />
+      <div class="relative">
+      <input type="text" placeholder="Email Address" class="w-full border p-3 rounded-md placeholder:text-gray-500 placeholder:font-semibold  md:placeholder:text-xs md:py-[5px]" id="email"/>
+      <img src="./images/icon-error.svg" alt="error icon" class="absolute right-4 top-4 hidden" />
+      </div>
 
-      <input type="text" placeholder="Email Address" class="w-full border p-3 rounded-md placeholder:text-gray-500 placeholder:font-semibold" />
-      <input type="text" placeholder="Password" class="w-full border p-3 rounded-md placeholder:text-gray-500 placeholder:font-semibold"/>
-    </form>
-    <button class="bg-claim font-poppins text-[16px] text-white font-semibold py-[15px] w-full mt-[18px] rounded-lg cursor-pointer shadow-[0_4px_0px_hsl(154,73%,43%)]">CLAIM YOUR FREE TRIAL</button>
-     <p class="text-terms-color text-[13px] mt-4 text-center leading-snug">
-      By clicking the button, you are agreeing to our <br>
-      <a href="#" class="text-red400 font-semibold justify-center text-center">Terms and Services</a>
+      <div class="relative">
+      <input type="password" placeholder="Password" class="w-full border p-3 rounded-md placeholder:text-gray-500 placeholder:font-semibold  md:placeholder:text-xs md:py-[5px]" id="password"/>
+      <img src="./images/icon-error.svg" alt="error icon" class="absolute right-4 top-4 hidden" />
+      </div>
+
+   
+    <button type="submit" class="bg-claim font-poppins text-[16px] text-white font-semibold py-[15px] w-full mt-[18px] rounded-lg cursor-pointer shadow-[0_4px_0px_hsl(154,73%,43%)] md:px-[20px] md:text-sm md:py-[12px] md:font-normal">CLAIM YOUR FREE TRIAL</button>
+     </form>
+     <p class="text-terms-color text-[13px] mt-4 text-center leading-snug md:text-[10px] md:whitespace-nowrap md:pb-[20px]">
+      By clicking the button, you are agreeing to our <br class="block md:hidden">
+      <a href="#" class="text-red400 font-semibold justify-center text-center md:text-[10px] md:inline">Terms and Services</a>
     </p>  
 </div>
   </div>
 
-
 </main>
+
+
+<script type="module" src="script.js"></script>
+
 </body>
 </html>
